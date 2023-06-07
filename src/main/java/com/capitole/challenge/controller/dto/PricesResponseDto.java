@@ -15,9 +15,9 @@ public class PricesResponseDto {
 
     Long productId;
     Long brandId;
-    Integer priceList;
-    LocalDateTime dateStart;
-    LocalDateTime dateEnd;
+    Long priceList;
+    LocalDateTime startDate;
+    LocalDateTime endDate;
     double price;
 
 }

@@ -1,9 +1,6 @@
 package com.capitole.challenge.core.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
@@ -18,6 +15,8 @@ import java.time.LocalDateTime;
 @Where(clause = "active=true")
 @NoArgsConstructor
 @EqualsAndHashCode
+@AllArgsConstructor
+@Builder
 public class Prices extends BaseEntity{
 
     @Column(name = "BRAND_ID")

@@ -1,10 +1,10 @@
 package com.capitole.challenge.service;
 
-import com.capitole.challenge.controller.dto.PricesRequestDto;
-import com.capitole.challenge.core.domain.Prices;
+import com.capitole.challenge.controller.dto.PricesResponseDto;
 
-import java.util.Optional;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public interface PricesService {
-    Optional<Prices> getPriceForProduct(PricesRequestDto pricesRequestDto);
+    List<PricesResponseDto> getPriceByProductIdAndBrandIdInApplyDate(Long productId, Long brandId, LocalDateTime applyDate);
 }
