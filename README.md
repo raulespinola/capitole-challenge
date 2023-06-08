@@ -20,7 +20,7 @@ correct one.
 - mvn install
 
 ### Api
-- Swagger: http://localhost:8080/swagger-ui/#
+- OpenApi: http://localhost:8080/swagger-ui/index.html#/
 - Endpoint: Get Price By ProductId, BrandId and a Date:
   - Example
     - Request: "http://localhost:8080/?productId=35455&brandId=1&date=2020-06-15T16:00:00.000"
