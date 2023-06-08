@@ -32,9 +32,9 @@ class PricesServiceImplTest {
     @Test
     void return_prices_from_service() {
         mockPriceList();
-        List<PricesResponseDto> prices = pricesService.getPriceByProductIdAndBrandIdInApplyDate(1L,
+        Optional<PricesResponseDto> prices = pricesService.getPriceByProductIdAndBrandIdInApplyDate(1L,
                 35455L,LocalDateTime.parse("2020-06-14 00:00:00", formatter));
-        assertEquals(prices.get(0).getPrice(), 35.5);
+        assertEquals(prices.get().getPrice(), 35.5);
     }
 
     private void mockPriceList() {

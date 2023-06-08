@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.*;
 class PricesFunctionalTest extends RestAssuredIntegrationTest{
 
     @Test
-    void test_1__get_price_at_10hs_day14_product_35455_brand1_return_price_35_5() {
+    void test_1_get_price_at_10hs_day14_product_35455_brand1_return_price_35_5() {
             float priceExpected= 35.5f;
             given()
                     .contentType(ContentType.JSON)
@@ -28,7 +28,7 @@ class PricesFunctionalTest extends RestAssuredIntegrationTest{
                     .then()
                     .log().all()
                     .statusCode(HttpStatus.SC_OK)
-                    .body("price[0]", is(priceExpected));
+                    .body("price", is(priceExpected));
     }
 
     @Test
@@ -44,7 +44,7 @@ class PricesFunctionalTest extends RestAssuredIntegrationTest{
                 .then()
                 .log().all()
                 .statusCode(HttpStatus.SC_OK)
-                .body("price[0]", is(priceExpected));
+                .body("price", is(priceExpected));
     }
 
     @Test
@@ -60,7 +60,7 @@ class PricesFunctionalTest extends RestAssuredIntegrationTest{
                 .then()
                 .log().all()
                 .statusCode(HttpStatus.SC_OK)
-                .body("price[0]", is(priceExpected));
+                .body("price", is(priceExpected));
     }
 
 
@@ -77,7 +77,7 @@ class PricesFunctionalTest extends RestAssuredIntegrationTest{
                 .then()
                 .log().all()
                 .statusCode(HttpStatus.SC_OK)
-                .body("price[0]", is(priceExpected));
+                .body("price", is(priceExpected));
     }
 
     @Test
@@ -93,6 +93,6 @@ class PricesFunctionalTest extends RestAssuredIntegrationTest{
                 .then()
                 .log().all()
                 .statusCode(HttpStatus.SC_OK)
-                .body("price[0]", is(priceExpected));
+                .body("price", is(priceExpected));
     }
 }

@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -15,7 +15,7 @@ public class PricesServiceImpl implements PricesService{
     private final PricesRepository pricesRepository;
 
     @Override
-    public List<PricesResponseDto> getPriceByProductIdAndBrandIdInApplyDate(Long productId, Long brandId, LocalDateTime applyDate) {
+    public Optional<PricesResponseDto> getPriceByProductIdAndBrandIdInApplyDate(Long productId, Long brandId, LocalDateTime applyDate) {
         return pricesRepository
                 .findByProductIdAndBrandIdAndDateIsBetween(productId, brandId, applyDate)
                 .stream().map(e->PricesResponseDto.builder()
@@ -25,6 +25,6 @@ public class PricesServiceImpl implements PricesService{
                         .brandId(e.getBrandId())
                         .price(e.getPrice())
                         .priceList(e.getPriceListId()).build())
-                .toList();
+                .findFirst();
     }
 }
